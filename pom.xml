@@ -63,6 +63,7 @@
 			  <version>0.4.13</version>
 			  <configuration>
 			    <imageName>registry.cn-qingdao.aliyuncs.com/crane-test/${project.artifactId}:${project.version}</imageName>
+			    <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
 				<dockerDirectory>${project.build.directory}/classes</dockerDirectory>
 			    <resources>
 			      <resource>
