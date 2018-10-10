@@ -57,10 +57,24 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <plugin>
-			  <groupId>com.spotify</groupId>
-			  <artifactId>docker-maven-plugin</artifactId>
-			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.4.11</version>
+				<configuration>
+					<imageName>registry.cn-qingdao.aliyuncs.com/crane-test/${project.artifactId}:${project.version}</imageName>
+						<serverId>docker_repo</serverId>
+						<registryUrl>https://registry.cn-qingdao.aliyuncs.com</registryUrl>
+					<dockerDirectory>${project.build.directory}/classes</dockerDirectory>
+					<resources>
+						<resource>
+							<targetPath>/</targetPath>
+							<directory>${project.build.directory}</directory>
+							<include>${project.build.finalName}.jar</include>
+						</resource>
+					</resources>
+				</configuration>
+        	</plugin>
         </plugins>
     </build>
 
