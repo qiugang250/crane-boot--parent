@@ -52,24 +52,6 @@
     </dependencyManagement>
 
     <build>
-            <resources>
-            <resource>
-                <directory>${project.basedir}/src/main/docker</directory>
-                <filtering>true</filtering>
-                <includes>
-                    <include>**/Dockerfile</include>
-                </includes>
-                <targetPath>../docker</targetPath>
-            </resource>
-            <!--注意这里一定要把resources目录下的配置文件引进去,并且不要指定targetPath-->
-            <resource>
-                <directory>${project.basedir}</directory>
-                <includes>
-                    <include>**/*.yml</include>
-                </includes>
-                <filtering>false</filtering>
-            </resource>
-        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
